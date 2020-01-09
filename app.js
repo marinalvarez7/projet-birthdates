@@ -9,6 +9,15 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+const session    = require("express-session");
+const MongoStore = require('connect-mongo')(session);
+
+const bcrypt = require("bcrypt");
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+
+
+const flash = require("connect-flash");
 
 mongoose
   .connect('mongodb://localhost/projet-birthdates', {useNewUrlParser: true})
@@ -30,6 +39,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(session({
+  secret: "our-passport-local-strategy-app",
+  store: new MongoStore( { mongooseConnection: mongoose.connection }),
+  resave: true,
+  saveUninitialized: true,
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());
+
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
@@ -49,10 +70,53 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
-
-
 const index = require('./routes/index');
 app.use('/', index);
+
+
+const router = require("./routes/auth-routes");
+app.use('/', router);
+
+const User = require('./models/user.js')
+
+passport.serializeUser((user, cb) => {
+  cb(null, user._id);
+});
+passport.deserializeUser((id, cb) => {
+  User.findById(id)
+    .then(user => cb(null, user))
+    .catch(err => cb(err))
+  ;
+});
+
+passport.use(new LocalStrategy(
+  {
+    passReqToCallback: true,
+    usernameField: 'useremail',
+    passwordField: ''
+  },
+  (...args) => {
+    const [req,,, done] = args;
+
+    const {useremail, password} = req.body;
+
+    User.findOne({useremail})
+      .then(user => {
+        if (!user) {
+          return done(null, false, { message: "Incorrect useremail" });
+        }
+          
+        if (!bcrypt.compareSync(password, user.password)) {
+          return done(null, false, { message: "Incorrect password" });
+        }
+    
+        done(null, user);
+      })
+      .catch(err => done(err))
+    ;
+  }
+));
+
 
 
 module.exports = app;
