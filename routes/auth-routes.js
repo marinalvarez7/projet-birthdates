@@ -7,7 +7,7 @@ const passport = require("passport");
 const User = require("../models/user");
 
 // Bcrypt to encrypt passwords
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 
 router.get("/signup", (req, res, next) => {
