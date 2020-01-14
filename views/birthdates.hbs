@@ -1,0 +1,23 @@
+<h1>Private page</h1>
+
+<p>Welcome {{user.prenom}}</p>
+
+  <p class="account-message">
+    Se déconnecter
+    <a href="/">Logout</a>
+  </p>
+
+  <ul>
+    {{#each members}}
+    <li class="member">
+      {{prenom}}
+      {{dateOfBirth}}
+      {{email}}
+      {{message}}
+      {{idMessage}}
+      <p>
+        <a href="/birthdates/{{id}}">editer</a>
+      </p>
+    </li>
+    {{/each}}
+  </ul>
