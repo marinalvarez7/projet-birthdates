@@ -68,7 +68,10 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4b084906c0fe3bfda2509dd33fab18a81a9115e3
 
 const index = require('./routes/index');
 app.use('/', index);
@@ -92,18 +95,18 @@ passport.deserializeUser((id, cb) => {
 passport.use(new LocalStrategy(
   {
     passReqToCallback: true,
-    usernameField: 'useremail',
+    usernameField: 'email',
     passwordField: ''
   },
   (...args) => {
     const [req,,, done] = args;
 
-    const {useremail, password} = req.body;
+    const {email, password} = req.body;
 
-    User.findOne({useremail})
+    User.findOne({email})
       .then(user => {
         if (!user) {
-          return done(null, false, { message: "Incorrect useremail" });
+          return done(null, false, { message: "Incorrect email" });
         }
           
         if (!bcrypt.compareSync(password, user.password)) {

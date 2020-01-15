@@ -1,0 +1,52 @@
+<h1>Private page</h1>
+
+<p>{{user.prenom}} ajouter une date d'anniversaire dans le calendrier</p>
+
+<p>Compléter les champs suivants</p>
+
+<form action="/newbirthdates" method="POST" id="form-container">
+
+  <div>
+    <label for="prenom">prenom</label>
+    <input id="prenom" type="text" name="prenom">
+  </div>
+
+  <div>
+    <label for="dateOfBirth">date de naissance</label>
+    <input id="dateOfBirth" type="date" name="dateOfBirth">
+  </div>
+
+  <div>
+    <label for="email">email</label>
+    <input id="email" type="email" name="email">
+  </div>
+
+  {{#if errorMessage}}
+  <div class="error-message">{{errorMessage}}</div>
+  {{/if}}
+
+  <div>
+    <p>
+      <label>
+      Sélectionner le message que vous souhaitez envoyer à {{members.prenom}}:
+        <select multiple name="message">
+          {{#each message}}
+          <option value="{{message}}" {{#if intype}}selected{{/if}}>{{message}}</option>
+          {{/each}}
+        </select>
+      </label>
+    </p>
+  </div>
+
+
+  <div>
+    <label for="message">message personnalisé</label>
+    <input id="message" type="text" name="message">
+  </div>
+
+
+    <button>valider</button>
+
+</form>
+
+  
