@@ -68,13 +68,6 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 4b084906c0fe3bfda2509dd33fab18a81a9115e3
-=======
->>>>>>> 29d2fcf3758c1d1d65abf50e238451986220bf69
 
 const index = require('./routes/index');
 app.use('/', index);
