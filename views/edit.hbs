@@ -1,0 +1,33 @@
+<h2>Modifier {{prenom}}</h2>
+
+<form action="/birthdates/{{members.id}}" method="POST">
+  <p>
+    <label>
+      Prénom:
+      <input type="text" name="prenom" value="{{members.prenom}}">
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Date de naissance:
+      <input type="date" name="dateOfBirth" value="{{members.dateOfBirth}}">
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Email:
+      <input type="email" name="email" value="{{members.email}}">
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Message:
+      <input type="text" name="message" value="{{members.message}}">
+    </label>
+  </p>
+
+  <button>Enregistrer</button>
+</form>

@@ -18,6 +18,9 @@
       <p>
         <a href="/birthdates/{{id}}">editer</a>
       </p>
+      <form action="/birthdates/{{id}}/delete" method="POST">
+        <button>Delete</button>
+      </form>
     </li>
     {{/each}}
   </ul>
