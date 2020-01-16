@@ -102,7 +102,7 @@ router.post("/birthdates/:id/delete", (req, res, next) => {
   ;
 });
 
-//editer un membre
+//editer un anniversaire
 //pré-remplir les champs du formulaire
 router.get("/birthdates/:id", (req, res, next) => {
   Members.findOne({_id: req.params.id})

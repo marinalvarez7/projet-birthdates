@@ -84,6 +84,12 @@ border:0px;
   margin-left: 2%;
   margin-top: 5%;
 }
+
+.paragrapheII{
+  flex-direction: column;
+  margin-top: 2%;
+  margin-left: 2%;
+}
 .titres{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: normal;
@@ -93,6 +99,7 @@ border:0px;
   display: flex;
   align-items: center;
   letter-spacing: 0.06em;
+  margin-left: 10%;
 
   color: #4A0D6A;
 
@@ -133,9 +140,161 @@ color: #4A0D6A;
 }
 
 #birthdaycake2{
-  width: 90%;
-  height: 90%;
+  width: 40%;
+  height: 60%;
   border-radius: 23%;
-  margin-left: 5%;
+  margin-left: 2%;
   margin-top: 5%;
 }
+
+//  ########  #######   #######  ######## ######## ########  
+//  ##       ##     ## ##     ##    ##    ##       ##     ## 
+//  ##       ##     ## ##     ##    ##    ##       ##     ## 
+//  ######   ##     ## ##     ##    ##    ######   ########  
+//  ##       ##     ## ##     ##    ##    ##       ##   ##   
+//  ##       ##     ## ##     ##    ##    ##       ##    ##  
+//  ##        #######   #######     ##    ######## ##     ##
+#footer{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+#footerlogo {
+  width: 110px;
+  height: 52px;
+  left: calc(50% - 91px/2 - 349.5px);
+  top: 96px;
+
+  font-family: Istok Web;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 52px;
+  /* identical to box height */
+
+
+
+  /* Black 80 */
+
+  color: #222222;
+
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+#socialmedias{
+  margin-left:10%;
+  margin-top:1%;
+  }
+
+.titrefooter{
+  width: 48px;
+  height: 20px;
+  left: calc(50% - 48px/2 - 160px);
+  top: 118px;
+
+  font-family: Gothic A1;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+  letter-spacing: 0.02em;
+
+  /* Black 80 */
+
+  color: #222222;
+
+  flex-direction: column;
+}
+.sous-titres{
+  flex-direction: column;
+}
+
+//   ######  ####  ######   ##    ##    ##     ## ########  
+//  ##    ##  ##  ##    ##  ###   ##    ##     ## ##     ## 
+//  ##        ##  ##        ####  ##    ##     ## ##     ## 
+//   ######   ##  ##   #### ## ## ##    ##     ## ########  
+//        ##  ##  ##    ##  ##  ####    ##     ## ##        
+//  ##    ##  ##  ##    ##  ##   ###    ##     ## ##        
+//   ######  ####  ######   ##    ##     #######  ## 
+
+.infosperso{
+  margin-left: 25%;
+  margin-right: 57%;
+
+
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+#prenom{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height */
+  color: rgba(0, 0, 0, 0.5);
+
+}
+
+#email{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height */
+  color: rgba(0, 0, 0, 0.5);
+
+}
+
+#password{
+  left: 39.24%;
+  right: 57.36%;
+  top: 38.03%;
+  bottom: 56.87%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height */
+  color: rgba(0, 0, 0, 0.5);
+
+}
+
+//  ##        #######   ######   #### ##    ## 
+//  ##       ##     ## ##    ##   ##  ###   ## 
+//  ##       ##     ## ##         ##  ####  ## 
+//  ##       ##     ## ##   ####  ##  ## ## ## 
+//  ##       ##     ## ##    ##   ##  ##  #### 
+//  ##       ##     ## ##    ##   ##  ##   ### 
+//  ########  #######   ######   #### ##    ## 
+
+
+
+
+
+//  ########  #### ########  ######## ##     ## ########     ###    ######## ########  ######  
+//  ##     ##  ##  ##     ##    ##    ##     ## ##     ##   ## ##      ##    ##       ##    ## 
+//  ##     ##  ##  ##     ##    ##    ##     ## ##     ##  ##   ##     ##    ##       ##       
+//  ########   ##  ########     ##    ######### ##     ## ##     ##    ##    ######    ######  
+//  ##     ##  ##  ##   ##      ##    ##     ## ##     ## #########    ##    ##             ## 
+//  ##     ##  ##  ##    ##     ##    ##     ## ##     ## ##     ##    ##    ##       ##    ## 
+//  ########  #### ##     ##    ##    ##     ## ########  ##     ##    ##    ########  ######
+
+
+
+
+//  ##    ## ######## ##      ##    ########     ###    ######## ######## 
+//  ###   ## ##       ##  ##  ##    ##     ##   ## ##      ##    ##       
+//  ####  ## ##       ##  ##  ##    ##     ##  ##   ##     ##    ##       
+//  ## ## ## ######   ##  ##  ##    ##     ## ##     ##    ##    ######   
+//  ##  #### ##       ##  ##  ##    ##     ## #########    ##    ##       
+//  ##   ### ##       ##  ##  ##    ##     ## ##     ##    ##    ##       
+//  ##    ## ########  ###  ###     ########  ##     ##    ##    ######## 

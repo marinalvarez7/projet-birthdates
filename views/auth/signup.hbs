@@ -2,19 +2,19 @@
 
 <form action="/signup" method="POST" id="form-container">
 
-  <div>
-    <label for="prenom">prenom</label>
-    <input id="prenom" type="text" name="prenom">
+  <div class="infosperso">
+    <label for="prenom"></label>
+    <input id="prenom" type="text" class="field"  name="prenom">
   </div>
 
-  <div>
-    <label for="email">email</label>
-    <input id="email" type="email" name="email">
+  <div class="infosperso">
+    <label for="email"></label>
+    <input id="email" type="email" class="field" name="email">
   </div>
   
-  <div>
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password">
+  <div class="infosperso">
+    <label for="password"></label>
+    <input id="password" type="password" class="field" name="password">
   </div>
 
   {{#if errorMessage}}
