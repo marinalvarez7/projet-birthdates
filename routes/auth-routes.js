@@ -90,6 +90,40 @@ router.get("/birthdates", (req, res, next) => {
   ;
 });
 
+//supprimer un anniversaire (membres)
+router.post("/birthdates/:id/delete", (req, res, next) => {
+  console.log("ici")
+  Members.findByIdAndRemove(req.params.id)
+    .then(members => {
+      console.log(members);
+      res.redirect("/birthdates")
+    })
+    .catch(err => next(err))
+  ;
+});
+
+//editer un membre
+//pré-remplir les champs du formulaire
+router.get("/birthdates/:id", (req, res, next) => {
+  Members.findOne({_id: req.params.id})
+    .then(members => res.render("edit", {members}))
+    .catch(err => next(err))
+  ;
+});
+
+router.post("/birthdates/:id", (req, res, next) => {
+  Members.update({ _id: req.params.id }, { $set : {
+    prenom: req.body.prenom,
+    dateOfBirth: req.body.dateOfBirth,
+    email: req.body.email,
+    message: req.body.message,
+  }})
+    .then((members) => res.redirect("/birthdates"))
+    .catch(err => next(err))
+  ;
+});
+
+
 router.get("/newbirthdates", (req, res, next) => {
   if (!req.user) {
     res.redirect('/login'); // not logged-in
@@ -108,8 +142,6 @@ router.get("/newbirthdates", (req, res, next) => {
   
   // ok, req.user is defined
   //res.render("newbirthdates", { user: req.user });
-
-
 });
 
 
