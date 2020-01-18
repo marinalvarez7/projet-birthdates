@@ -1,26 +1,36 @@
-<h1>Private page</h1>
 
-<p>Welcome {{user.prenom}}</p>
+<div id="titre">
+<h1>Bienvenu {{user.prenom}}</h1>
 
-  <p class="account-message">
-    Se déconnecter
-    <a href="/">Logout</a>
+<h2>Ajoutez les anniversaires à ne surtout pas oublier &#128540;</h2>
+</div>
+
+  <p class="newbirthday">
+    <a href="/newbirthdates">Ajouter un anniversaire</a>
   </p>
 
-  <ul>
-    {{#each members}}
-    <li class="member">
-      {{prenom}}
-      {{dateOfBirth}}
-      {{email}}
-      {{message}}
-      {{idMessage}}
-      <p>
-        <a href="/birthdates/{{id}}">editer</a>
-      </p>
-      <form action="/birthdates/{{id}}/delete" method="POST">
-        <button>Delete</button>
-      </form>
-    </li>
-    {{/each}}
-  </ul>
+{{#each members}}
+<div class="cards">
+<article class="card">
+    <div class="details">
+      <div class="prenom">{{prenom}}</div>
+      <div class="dateOfBirth">{{dateOfBirth}}</div>
+      <div class="email">{{email}}</div>
+      <div class="message">{{message}}</div>      
+      <div class="btn">
+        <div class="editer">
+          <p>
+           <a class="btn2" href="/birthdates/{{id}}">Editer</a>
+          </p>
+        </div>
+        <div class="supprimer">
+        <form action="/birthdates/{{id}}/delete" method="POST">
+            <button class="btn1">Supprimer</button>
+         </form>
+        </div>
+      </div>
+  </div>
+</article>
+</div>
+{{/each}}
+
