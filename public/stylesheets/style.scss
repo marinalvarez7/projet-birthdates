@@ -4,6 +4,15 @@ body {
   margin: 0%;
 }
 
+:root {
+  --pad:1em;
+  --gutter:1.5em;
+}
+@media (min-width:900px) {
+  :root {
+    --pad:4em;
+  }
+}
 
 //  ##    ##    ###    ##     ##    ########     ###    ########  
 //  ###   ##   ## ##   ##     ##    ##     ##   ## ##   ##     ## 
@@ -25,14 +34,14 @@ body {
 }
 
 #logotext {
-  width: 27%;
+  width: 25%;
   margin-left:20%
 }
 
 #logosloth {
-  width:8%;
-  margin-top: 4%;
-  margin-left:2%
+  width:65%;
+  margin-top: 23%;
+  margin-left:10%
 }
 
 #login{
@@ -154,7 +163,7 @@ color: #4A0D6A;
 //  ##       ##     ## ##     ##    ##    ##       ##   ##   
 //  ##       ##     ## ##     ##    ##    ##       ##    ##  
 //  ##        #######   #######     ##    ######## ##     ##
-#footer{
+/*#footer{
   display: flex;
   align-items: center;
   text-align: center;
@@ -176,7 +185,7 @@ color: #4A0D6A;
 
   /* Black 80 */
 
-  color: #222222;
+  /*color: #222222;
 
   margin-left: 10%;
   margin-top: 10%;
@@ -199,16 +208,69 @@ color: #4A0D6A;
   font-size: 16px;
   line-height: 20px;
   /* identical to box height */
-  letter-spacing: 0.02em;
+  /*letter-spacing: 0.02em;
 
   /* Black 80 */
 
-  color: #222222;
+  /*color: #222222;
 
   flex-direction: column;
 }
 .sous-titres{
   flex-direction: column;
+}*/
+
+.footer {
+  /* some shared styles with .howto: cf. .howto */
+
+  background: rgb(250, 241, 243);
+  padding-top: 0.5em;
+  
+}
+@media (min-width:900px) {
+  .footer {display:flex; justify-content:space-between;}
+  .footer >div {width:calc(25% - 3 * var(--gutter) / 4);}
+}
+
+.footer h3 {
+  margin-top:1em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.footer a {
+  display:block;
+  color:gray;
+  line-height:2;
+  margin-left: 2em;
+  margin-right: 2em;
+
+}
+
+address {
+  font-style:inherit;
+  background: #4A0D6A;
+  color: white;
+  padding:0.5em var(--pad);
+
+}
+@media (min-width:900px) {
+  address {display:flex;}
+  p {margin-right:auto; margin-bottom:0;}
+}
+
+address p {
+  margin-left: 1em;
+  margin-top:0em;
+  margin-bottom: 1em;
+}
+
+address a {
+  margin-left: 1em;
+  margin-right:3em;
+  margin-top:0em;
+  margin-bottom: 1em;
+  color: white;
 }
 
 //   ######  ####  ######   ##    ##    ##     ## ########  
@@ -219,53 +281,68 @@ color: #4A0D6A;
 //  ##    ##  ##  ##    ##  ##   ###    ##     ## ##        
 //   ######  ####  ######   ##    ##     #######  ## 
 
-.infosperso{
-  margin-left: 25%;
-  margin-right: 57%;
+#titre h1 {
+  color:  #4A0D6A;
+}
 
+::placeholder {
+  text-align: center;
+}
 
-  background: #FFFFFF;
-  border: 1px solid #000000;
+#titre {
+  text-align: center;
+  color: rgb(46, 45, 45);
+}
+
+#form1 {
+  margin: 20px auto;
+  width: 380px;
+}
+
+#form1 label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+#form1 input,
+#form1 button {
   box-sizing: border-box;
-  border-radius: 5px;
+  font-size: 14px;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px;
 }
 
-#prenom{
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 28px;
-  /* identical to box height */
-  color: rgba(0, 0, 0, 0.5);
-
+#form1 button {
+  margin-top: 20px;
+  background: #4A0D6A;
+  border: 1px solid  #4A0D6A;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s ease background;
+  width: 100%;
 }
 
-#email{
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 28px;
-  /* identical to box height */
-  color: rgba(0, 0, 0, 0.5);
-
+#form1 button:hover {
+  background: #fff;
+  color: #4A0D6A;
+  transition: .3s ease background;
 }
 
-#password{
-  left: 39.24%;
-  right: 57.36%;
-  top: 38.03%;
-  bottom: 56.87%;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 28px;
-  /* identical to box height */
-  color: rgba(0, 0, 0, 0.5);
-
+#text2 {
+  text-align: center;
+  color:  #4A0D6A;
+  margin-bottom:5em;
 }
 
 //  ##        #######   ######   #### ##    ## 
@@ -276,6 +353,69 @@ color: #4A0D6A;
 //  ##       ##     ## ##    ##   ##  ##   ### 
 //  ########  #######   ######   #### ##    ## 
 
+#titre h1 {
+  color:  #4A0D6A;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+#titre {
+  text-align: center;
+  color: rgb(46, 45, 45);
+}
+
+#form1 {
+  margin: 20px auto;
+  width: 380px;
+}
+
+#form1 label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+#form1 input,
+#form1 button {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#form1 button {
+  margin-top: 20px;
+  background: #4A0D6A;
+  border: 1px solid  #4A0D6A;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s ease background;
+  width: 100%;
+}
+
+#form1 button:hover {
+  background: #fff;
+  color: #4A0D6A;
+  transition: .3s ease background;
+}
+
+#text2 {
+  text-align: center;
+  color:  #4A0D6A;
+  margin-bottom: 9em;
+}
 
 
 
@@ -288,6 +428,56 @@ color: #4A0D6A;
 //  ##     ##  ##  ##    ##     ##    ##     ## ##     ## ##     ##    ##    ##       ##    ## 
 //  ########  #### ##     ##    ##    ##     ## ########  ##     ##    ##    ########  ######
 
+.newbirthday {
+  text-align: center;
+  padding-bottom: 5em;
+}
+
+.card {
+  height:15em;
+  display:block; margin:0 auto;
+
+}
+
+.cards {}
+@media (min-width:900px) {
+  .cards {display:flex; flex-wrap:wrap; justify-content:space-between;}
+  .card {width:calc(25% - 3 * var(--gutter) / 4);}
+}
+
+.card {
+  background:rgb(218, 216, 216);
+  margin-bottom:3em;
+  text-align: center;
+}
+
+.card {border-radius:1em;}
+
+.card .details {padding:1em;}
+
+.btn {
+  display: flex;
+  /*flex-direction: row;*/
+  /*align-items: center;*/
+  /*justify-content: space-between;*/
+}
+
+.card .btn1 {
+  padding:.5em 1em;
+  background:#F02B63; color:white;
+  font-size:80%;
+  
+}
+
+.card .btn2 {
+  padding:.5em 1em;
+  background:#4A0D6A; color:white;
+  font-size:80%;
+
+}
+
+
+
 
 
 
@@ -298,3 +488,70 @@ color: #4A0D6A;
 //  ##  #### ##       ##  ##  ##    ##     ## #########    ##    ##       
 //  ##   ### ##       ##  ##  ##    ##     ## ##     ##    ##    ##       
 //  ##    ## ########  ###  ###     ########  ##     ##    ##    ######## 
+
+#titre {
+  text-align: center;
+  color: rgb(46, 45, 45);
+}
+#form {
+  margin: 30px auto;
+  width: 380px;
+}
+
+#form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+#form input,
+#form button {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#form button {
+  background: #4A0D6A;
+  border: 1px solid  #4A0D6A;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s ease background;
+  width: 100%;
+}
+
+#form button:hover {
+  background: #fff;
+  color: #4A0D6A;
+  transition: .3s ease background;
+}
+
+.error-message {
+  background: #F02B63;
+  box-sizing: border-box;
+  color: #fff;
+  margin: 10px auto;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/*EDIT*/
+
+
+#form1 label .message {
+  padding: 50px;
+}
+

@@ -1,20 +1,23 @@
-<h2>Signup</h2>
+<div id="titre"><h1>Envie de tester ? Créez votre compte</h1>
 
-<form action="/signup" method="POST" id="form-container">
+<h2>Compléter les champs suivants :</h2>
+</div>
 
-  <div class="infosperso">
+<form id="form1" action="/signup" method="POST" id="form-container">
+
+  <div>
     <label for="prenom"></label>
-    <input id="prenom" type="text" class="field"  name="prenom">
+    <input id="prenom" type="text" name="prenom" placeholder="Votre prénom">
   </div>
 
-  <div class="infosperso">
+  <div>
     <label for="email"></label>
-    <input id="email" type="email" class="field" name="email">
+    <input id="email" type="email" name="email" placeholder="Adresse mail">
   </div>
   
-  <div class="infosperso">
+  <div>
     <label for="password"></label>
-    <input id="password" type="password" class="field" name="password">
+    <input id="password" type="password" name="password" placeholder="Votre mot de passe">
   </div>
 
   {{#if errorMessage}}
@@ -22,11 +25,13 @@
   {{/if}}
 
   <div>
-    <button>Create account</button>
+    <button>Je crée mon compte</button>
   </div>
 
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/login">Login</a>
-  </p>
+  <div id="text2">
+    <p class="account-message">
+     Vous avez déjà un compte ?
+     <a href="/login">Connectez-vous</a>
+    </p>
+  </div>
 </form>

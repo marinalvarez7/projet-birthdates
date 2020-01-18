@@ -1,12 +1,16 @@
-<form action="/login" method="POST">
+<div id="titre"><h1>Déjà inscrit ? Connectez-vous</h1>
+<h2>Pour vous identifier, saisissez les informations suivantes :</h2>
+</div>
+
+<form id="form1" action="/login" method="POST">
   <div>
-    <label for="email">email:</label>
-    <input type="email" name="email">
+    <label for="email"></label>
+    <input type="email" name="email" placeholder="Adresse mail">
   </div>
   
   <div>
-    <label for="password">Password:</label>
-    <input type="password" name="password">
+    <label for="password"></label>
+    <input type="password" name="password" placeholder="Mot de passe">
   </div>
   
   {{#if errorMessage}}
@@ -17,3 +21,5 @@
     <button>Log in</button>
   </div>
 </form>
+<div id="text2"><p>Vous n'avez pas encore de compte ?<a href="/signup"> Cliquez-ici</a></p>
+</div>
