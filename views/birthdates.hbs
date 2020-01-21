@@ -1,19 +1,22 @@
 
+<div id="introBday">
 <div id="titre">
 <h1>Bienvenu {{user.prenom}}</h1>
-
 <h2>Ajoutez les anniversaires à ne surtout pas oublier &#128540;</h2>
+<a class="newbirthday" href="/newbirthdates">Ajouter un anniversaire</a>
+</div>
 </div>
 
-  <p class="newbirthday">
-    <a href="/newbirthdates">Ajouter un anniversaire</a>
-  </p>
-
+<h3 id="test">test</h3>
+{{#unless members}}
+<h2 id="test2">test</h2>
+{{/unless}}
+<div class="big_card">
 {{#each members}}
 <div class="cards">
 <article class="card">
     <div class="details">
-      <div class="prenom">{{prenom}}</div>
+      <div class="prenom">&#127874;{{prenom}}</div>
       <div class="dateOfBirth">{{dateOfBirth}}</div>
       <div class="email">{{email}}</div>
       <div class="message">{{message}}</div>      
@@ -33,4 +36,4 @@
 </article>
 </div>
 {{/each}}
-
+</div>

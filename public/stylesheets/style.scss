@@ -2,6 +2,7 @@
 
 body {
   margin: 0%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 :root {
@@ -14,6 +15,8 @@ body {
   }
 }
 
+
+
 //  ##    ##    ###    ##     ##    ########     ###    ########  
 //  ###   ##   ## ##   ##     ##    ##     ##   ## ##   ##     ## 
 //  ####  ##  ##   ##  ##     ##    ##     ##  ##   ##  ##     ## 
@@ -22,59 +25,124 @@ body {
 //  ##   ### ##     ##   ## ##      ##     ## ##     ## ##    ##  
 //  ##    ## ##     ##    ###       ########  ##     ## ##     ##                                                           
 
-#navbar{
-  width: 100%;
-  height: 92px;
-  background: #FEE9EE;
-  border: 1px solid #FFFFFF;
-  box-sizing: border-box;
+img {max-width:50%;}
 
-  display: flex;
-  align-items: center;
+
+a {text-decoration:inherit; color:inherit;}
+
+@media (min-width:900px) {
+  /*
+  Make the header 100vh and the form get the available height
+  */
+  .header {
+    display:flex; flex-direction:column;
+    //min-height:100vh;
+  }
+}
+
+
+.navbar {
+  display:flex;
+  background:rgb(250, 241, 243);
+  padding:0.5em var(--pad);
+}
+@media (min-width:900px) {
+  .navbar {align-items:center;}
+
 }
 
 #logotext {
-  width: 25%;
-  margin-left:20%
+  margin-top: 0.7em;
+  margin-left: 5em;
 }
 
-#logosloth {
-  width:65%;
-  margin-top: 23%;
-  margin-left:10%
+
+.navbar .menu {margin-left:auto;}
+
+.navbar .menu img {
+  height:6em;
 }
 
-#login{
-margin-left: 20%;
 
-/* Label / Button Gothic Medium 18 */
-
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 22px;
-
-color: #4A0D6A;
-background: #FEE9EE;
-border:0px;
+.navbar .menu2 {display:none;}
+@media (min-width:900px) {
+ 
+  .navbar .menu {display:none;}
+  .navbar .menu2 {
+    display:initial;
+    margin-left:auto;
+  }
+  .navbar .menu2 a {margin-right:3em;}
 }
 
-#signup{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-left: 5%;
-  height: 45px;
-  width:120px;
-  left: 28px;
-  right: 27.11px;
-  top: calc(50% - 24px/2 + 3px);
-  /* Shadow / Card Negative */
+.navbar {
+  position: relative;
+}
+.masthead {
+  position: absolute;
+  top:11px;
 
-  box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.4), 0px 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 23px;
+}
+
+@media (max-width:900px) {
+  .masthead {
+    position: absolute;
+    top: 46px;
+    width: 62%;
+  }
+  #logotext {
+    margin-top: 1.7em;
+    margin-left: 3em;
+  }
+  .menu {
+    width: 60%;
+  }
+
+}
+
+.menu2 {
+  font-size: 17px;
+}
+
+.login {
+  color: #4A0D6A;
+}
+
+.signup {
   background: #4A0D6A;
-  color: #FFFFFF;
+  color: #fbfafc;
+  /* margin-top: 11px; */
+  /* border: 1px solid #4A0D6A; */
+  border-radius: 47px;
+  /* display: inline-block; */
+  /* text-decoration: none; */
+  /* text-transform: uppercase; */
+  width: 60%;
+  box-sizing: border-box;
+  /* font-size: 14px; */
+  outline: 0;
+  padding: 10px;
+  width: 48%;
 }
+
+.logout{
+  background: white;
+  color: #4A0D6A;
+  /* margin-top: 11px; */
+  /* border: 1px solid #4A0D6A; */
+  border-radius: 47px;
+  /* display: inline-block; */
+  /* text-decoration: none; */
+  /* text-transform: uppercase; */
+  width: 60%;
+  box-sizing: border-box;
+  /* font-size: 14px; */
+  outline: 0;
+  padding: 10px;
+  width: 48%;
+}
+
+
 
 //  ##     ##  #######  ##     ## ######## ########     ###     ######   ######## 
 //  ##     ## ##     ## ###   ### ##       ##     ##   ## ##   ##    ##  ##       
@@ -86,75 +154,88 @@ border:0px;
 
 .paragraphes{
   display: flex;
+  text-align: center;
+  margin-bottom: 6em;
 }
 
-.paragrapheI{
+.sousparagraphe{
   flex-direction: column;
-  margin-left: 2%;
-  margin-top: 5%;
+  margin-left: 10%;
+  margin-top: 3%;
+
 }
 
-.paragrapheII{
-  flex-direction: column;
-  margin-top: 2%;
-  margin-left: 2%;
-}
+
 .titres{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 33px;
+  font-size: 25px;
   line-height: 33px;
   display: flex;
   align-items: center;
   letter-spacing: 0.06em;
   margin-left: 10%;
-
   color: #4A0D6A;
 
 }
 
 .textes{
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 22px;
-line-height: 25px;
-letter-spacing: 0.04em;
-
-color: #4A0D6A;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.04em;
+  color: rgb(46, 45, 45);
+  margin-bottom:1em;
 }
 
-#birthdaycake{
-  width: 80%;
-  height: 90%;
-  border-radius: 23%;
-  margin-left: 15%;
-  margin-top: 5%;
+.birthdaycake{
+
+  width: 250%;
+  // height: 150%;
+  // // border-radius: 23%;
+  // margin-left: 10%;
+  margin-top: 5em;
 }
 
-#createcalendar{
-  margin-left:65%;
-  height: 45px;
-  width:120px;
-  left: 28px;
-  right: 27.11px;
-  top: calc(50% - 24px/2 + 3px);
-  /* Shadow / Card Negative */
+@media (max-width:900px) {
+  .birthdaycake {display:none;}
+  .titres {font-size: 30px;}
+  .textes{font-size: 20px;}
+  .sousparagraphe {
+    flex-direction: column;
+    margin-left: 0%;
+    margin-top: 10%;
+  }
+}
 
-  box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.4), 0px 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 23px;
+
+#createcalendar {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#createcalendar {
+  margin-top: 20px;
+  border: 1px solid  #4A0D6A;
+  border-radius: 47px;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 60%;
+}
+
+#createcalendar {
   background: #4A0D6A;
-  color: #FFFFFF;
+  color: rgb(251, 250, 252);
 }
 
-#birthdaycake2{
-  width: 40%;
-  height: 60%;
-  border-radius: 23%;
-  margin-left: 2%;
-  margin-top: 5%;
-}
 
 //  ########  #######   #######  ######## ######## ########  
 //  ##       ##     ## ##     ##    ##    ##       ##     ## 
@@ -163,62 +244,6 @@ color: #4A0D6A;
 //  ##       ##     ## ##     ##    ##    ##       ##   ##   
 //  ##       ##     ## ##     ##    ##    ##       ##    ##  
 //  ##        #######   #######     ##    ######## ##     ##
-/*#footer{
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-#footerlogo {
-  width: 110px;
-  height: 52px;
-  left: calc(50% - 91px/2 - 349.5px);
-  top: 96px;
-
-  font-family: Istok Web;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 52px;
-  /* identical to box height */
-
-
-
-  /* Black 80 */
-
-  /*color: #222222;
-
-  margin-left: 10%;
-  margin-top: 10%;
-}
-
-#socialmedias{
-  margin-left:10%;
-  margin-top:1%;
-  }
-
-.titrefooter{
-  width: 48px;
-  height: 20px;
-  left: calc(50% - 48px/2 - 160px);
-  top: 118px;
-
-  font-family: Gothic A1;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
-  /* identical to box height */
-  /*letter-spacing: 0.02em;
-
-  /* Black 80 */
-
-  /*color: #222222;
-
-  flex-direction: column;
-}
-.sous-titres{
-  flex-direction: column;
-}*/
 
 .footer {
   /* some shared styles with .howto: cf. .howto */
@@ -242,7 +267,7 @@ color: #4A0D6A;
   display:block;
   color:gray;
   line-height:2;
-  margin-left: 2em;
+  margin-left: 3em;
   margin-right: 2em;
 
 }
@@ -251,7 +276,7 @@ address {
   font-style:inherit;
   background: #4A0D6A;
   color: white;
-  padding:0.5em var(--pad);
+  padding:1em var(--pad);
 
 }
 @media (min-width:900px) {
@@ -321,7 +346,7 @@ address a {
   margin-top: 20px;
   background: #4A0D6A;
   border: 1px solid  #4A0D6A;
-  border-radius: 4px;
+  border-radius: 47px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -393,7 +418,7 @@ address a {
   margin-top: 20px;
   background: #4A0D6A;
   border: 1px solid  #4A0D6A;
-  border-radius: 4px;
+  border-radius: 47px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -428,27 +453,41 @@ address a {
 //  ##     ##  ##  ##    ##     ##    ##     ## ##     ## ##     ##    ##    ##       ##    ## 
 //  ########  #### ##     ##    ##    ##     ## ########  ##     ##    ##    ########  ######
 
-.newbirthday {
-  text-align: center;
-  padding-bottom: 5em;
-}
-
 .card {
-  height:15em;
+  height:13em;
   display:block; margin:0 auto;
 
 }
 
 .cards {}
 @media (min-width:900px) {
-  .cards {display:flex; flex-wrap:wrap; justify-content:space-between;}
-  .card {width:calc(25% - 3 * var(--gutter) / 4);}
+  .big_card {display:flex; flex-direction:row; flex-wrap:wrap; align-items :center;justify-content:space-around; width:100%}
+
+  .cards {width:calc(25% - 3 * var(--gutter) / 4);}
+  .cards {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
+
+
+#test {
+  color: white;
+}
+
+#titre h2 {
+  margin-bottom: 2em;
 }
 
 .card {
-  background:rgb(218, 216, 216);
+  background:rgba(233, 231, 231, 0.76);
   margin-bottom:3em;
-  text-align: center;
+
+}
+
+#test2 {
+  font-size: 110px;
+  color: white;
 }
 
 .card {border-radius:1em;}
@@ -457,9 +496,8 @@ address a {
 
 .btn {
   display: flex;
-  /*flex-direction: row;*/
-  /*align-items: center;*/
-  /*justify-content: space-between;*/
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card .btn1 {
@@ -476,9 +514,69 @@ address a {
 
 }
 
+.newbirthday {
+  box-sizing: border-box;
+  font-size: 14px;
+  //outline: 0;
+  padding: 10px;
+  //width: 100%;
+  margin-bottom: 5px;
+  text-align: center;
+}
 
+.newbirthday {
+  margin-top: 20px;
+  border: 1px solid  #4A0D6A;
+  border-radius: 47px;
+  //display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 20%;
+}
 
+.newbirthday {
+  background: #4A0D6A;
+  color: rgb(251, 250, 252);
+  margin-bottom: 2em;
 
+}
+
+@media (max-width:900px) {
+  #titre {
+    margin-top: 5em;
+  }
+}
+
+.menu2 {
+  display: none;
+}
+
+.prenom {
+  color: #4A0D6A;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 1em;
+
+}
+
+.dateOfBirth {
+  padding-bottom: 0.5em;
+}
+
+.email {
+  padding-bottom: 0.5em;
+}
+
+.message {
+  padding-bottom: 0.5em;
+}
+
+@media (max-width:900px) {
+  .cards {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
 
 
 //  ##    ## ######## ##      ##    ########     ###    ######## ######## 
@@ -495,11 +593,11 @@ address a {
 }
 #form {
   margin: 30px auto;
-  width: 380px;
+  width: 335px;
 }
 
 #form label {
-  color: #666;
+  color: rgb(46, 45, 45);
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
@@ -519,7 +617,7 @@ address a {
 #form button {
   background: #4A0D6A;
   border: 1px solid  #4A0D6A;
-  border-radius: 4px;
+  border-radius: 47px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -547,6 +645,14 @@ address a {
   text-align: center;
 }
 
+/*@media (max-width:900px) {
+  .titre {
+
+  }
+  .titre h2 {
+
+  }
+}*/
 
 /*EDIT*/
 

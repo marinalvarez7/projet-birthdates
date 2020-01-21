@@ -1,4 +1,4 @@
-<div id="titre"><h1>{{user.prenom}} ajouter une date d'anniversaire dans le calendrier</h1>
+<div id="titre"><h1>Ajouter une date d'anniversaire dans le calendrier</h1>
 
 <h2>Compléter les champs suivants :</h2>
 </div>
@@ -6,17 +6,17 @@
 
   <div>
     <label for="prenom">Son prénom :</label>
-    <input id="prenom" type="text" name="prenom">
+    <input id="prenom" type="text" name="prenom" required>
   </div>
 
   <div>
     <label for="email">Son email :</label>
-    <input id="email" type="email" name="email">
+    <input id="email" type="email" name="email" required>
   </div>
 
   <div>
     <label for="dateOfBirth">Sa date de naissance :</label>
-    <input id="dateOfBirth" type="date" name="dateOfBirth">
+    <input id="dateOfBirth" type="date" name="dateOfBirth" required>
   </div>
 
   {{#if errorMessage}}
@@ -25,7 +25,7 @@
 
   <div>
     <label for="message">Votre message personnalisé pour le jour J :</label>
-    <input id="message" type="text" name="message">
+    <input id="message" type="text" name="message" required>
   </div>
 
 

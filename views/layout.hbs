@@ -9,17 +9,36 @@
 </head>
 
 <body>
- <div id="navbar">
-  <a href="/birthdates">
-  <img id="logosloth" src="/images/logosloth2.png" alt="logosloth">
-  </a>
-  <img id="logotext" src="/images/logobirthdates.png" alt="logobirthdates">
-  <button id="login" href="/login">Connexion</button>
-  <button id="signup" href="/signup">Inscription</button>
-  </div>
+  <header class="header">
+    <nav class="navbar">
+      <div class="masthead">
+        <a href="/birthdates">
+          <img id="logosloth" src="/images/logosloth2.png" alt="logosloth">
+        </a>
+      </div>
+      <div id="logotext">
+        <img id="logotext" src="/images/logobirthdates.png" alt="logobirthdates">
+      </div>
+
+      <div class="menu">
+        <a href="javascript:void 0;"><img src="images/hamburger.svg" alt="Menu" /></a>
+      </div>
+      {{#unless user}}
+      <div class="menu2">
+        <a class="login" href="/login">Connexion</a>
+        <a class="signup" href="/signup">Création de compte</a>
+      </div>
+      {{/unless}}
+      {{#if user}}
+      <div class="menu2">
+        <a class="logout" href="/logout">déconnexion</a>
+      </div>
+      {{/if}}
+  </nav>
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
+  </header>
 </body>
   </section>
 
