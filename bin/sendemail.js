@@ -5,9 +5,8 @@ const month = (datedujour.getMonth()+1);//date du mois mais ajouter +1
 const date = datedujour.getDate();//date du jour
 
 const Members = require("../models/members");
-const dbtitle = 'projet-birthdates';
-mongoose.connect(`mongodb://localhost/${dbtitle}`, {useNewUrlParser: true, useUnifiedTopology: true}).catch(err => console.error(err));
-
+//const dbtitle = 'projet-birthdates';
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true}).catch(err => console.error(err));
 
 
 const startOfDay = new Date(new Date().setUTCHours(0, 0, 0, 0)).toISOString()
