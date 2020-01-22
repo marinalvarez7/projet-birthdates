@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: require('path').resolve(__dirname, '../.env')
+});
+
 const express = require("express");
 const mongoose = require('mongoose');
 var datedujour = new Date();//la date total du jour
