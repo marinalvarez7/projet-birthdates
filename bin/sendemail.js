@@ -2,11 +2,7 @@ require('dotenv').config({
   path: require('path').resolve(__dirname, '../.env')
 });
 
-const express = require("express");
 const mongoose = require('mongoose');
-var datedujour = new Date();//la date total du jour
-const month = (datedujour.getMonth()+1);//date du mois mais ajouter +1
-const date = datedujour.getDate();//date du jour
 
 const Members = require("../models/members");
 //const dbtitle = 'projet-birthdates';
@@ -25,6 +21,8 @@ Members.find({
 
   sendTest(members)
 
+  mongoose.connection.close()
+
 
   //console.log('tt', members)
 }).catch(err => console.log(err, "Erreur"))
@@ -33,7 +31,8 @@ Members.find({
 
 function sendTest(members){
   const sgMail = require('@sendgrid/mail');
-  sgMail.setApiKey("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");
+  sgMail.setApiKey(process.env.SENDGRID_APIKEY);
+
   members.forEach(member => {
     const msg = {
       to: member.email,
@@ -42,6 +41,8 @@ function sendTest(members){
       text: member.message,
       html:`<strong>${member.message}</strong>`,
       };
+
+    console.log('msg=', msg);
     sgMail.send(msg)
   });
 };
@@ -58,4 +59,5 @@ function sendTest(members){
 // }).catch(err => console.log(err, "Erreur"))
 
 
-
+//
+// 
