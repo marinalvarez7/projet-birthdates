@@ -8,6 +8,12 @@ const Members = require("../models/members");
 //const dbtitle = 'projet-birthdates';
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true}).catch(err => console.error(err));
 
+const startOfDay = new Date(new Date().setUTCHours(0, 0, 0, 0)).toISOString()
+const endOfDay = new Date(new Date().setUTCHours(23, 59, 59, 999)).toISOString()
+Members.find({
+  "dateOfBirth": {"$gte": new Date(startOfDay), "$lt": new Date(endOfDay)}
+})
+.then (function(members) {
 
 
   sendTest(members)
@@ -32,19 +38,8 @@ function sendTest(members){
       text: member.message,
       html:`<strong>${member.message}</strong>`,
       };
-
-
-// const start = ’2020-${month}-${date}T00:00:00Z’;
-// const end = ('2020-’${month}’-’${date}’T23:59:59Z');
-// // const start = '2020-01-21T00:00:00Z'; 
-// // const end = '2020-01-21T23:59:59Z';
-// Members.find({
-//   "dateOfBirth": {"$gte": new Date(start), "$lt": new Date(end)}
-// })
-// .then (function(members) {
-//   console.log('tt', members)
-// }).catch(err => console.log(err, "Erreur"))
-
-
+    sgMail.send(msg)
+  });
+};
 //
 // 
