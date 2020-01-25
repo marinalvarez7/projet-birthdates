@@ -9,15 +9,6 @@ const Members = require("../models/members");
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true}).catch(err => console.error(err));
 
 
-const startOfDay = new Date(new Date().setUTCHours(0, 0, 0, 0)).toISOString()
-const endOfDay = new Date(new Date().setUTCHours(23, 59, 59, 999)).toISOString()
-Members.find({
-  "dateOfBirth": {"$gte": new Date(startOfDay), "$lt": new Date(endOfDay)}
-})
-.then (function(members) {
-  //
-  // 
-  //
 
   sendTest(members)
 
@@ -42,10 +33,6 @@ function sendTest(members){
       html:`<strong>${member.message}</strong>`,
       };
 
-    console.log('msg=', msg);
-    sgMail.send(msg)
-  });
-};
 
 // const start = ’2020-${month}-${date}T00:00:00Z’;
 // const end = ('2020-’${month}’-’${date}’T23:59:59Z');
